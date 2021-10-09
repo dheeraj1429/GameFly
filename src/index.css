@@ -12,6 +12,7 @@ code {
 :root {
   --dark: #000;
   --mainColor: #fff;
+  --lightSmook: #b8b8b8;
 }
 
 a:-webkit-any-link {

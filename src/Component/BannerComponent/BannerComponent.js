@@ -5,11 +5,12 @@ import { SetData, SendData } from "../../Redux/Action/action";
 import "./BannerComponent.css";
 
 function BannerComponent() {
+  const selector = useSelector((state) => state.userReducer.DataList);
   const [GameId, setGameId] = useState("");
   const [Hover, setHover] = useState(false);
 
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state.userReducer.DataList);
+
   // let filterGameState = selector.filter((item, idx) => idx < 3);
 
   const ResData = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import BannerComponent from "../../Component/BannerComponent/BannerComponent";
-import CardComponent from "../../Component/CardComponent/CardComponent";
+import CardComponent from "../../Component/CardComponent/CardLargeComponent/CardComponent";
 
 function HomePage() {
   return (

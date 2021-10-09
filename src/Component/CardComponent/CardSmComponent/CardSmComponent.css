@@ -1,0 +1,74 @@
+.Container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.card {
+  width: 350px;
+  height: auto;
+  margin: 1rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgb(63, 60, 60);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.Inner-Card {
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.ImgDiv {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+
+.Inner-Card:hover .ImgDiv {
+  transform: scale(1.1);
+}
+
+.card .CardContent h1 {
+  font-size: 1.2rem;
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.card .CardContent p {
+  font-size: 0.7rem;
+  color: var(--lightSmook);
+}
+
+.JoinDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.JoinDiv .JoinDivFirst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.JoinDivFirst img {
+  margin-right: 0.3rem;
+}
+.JoinDivFirst p {
+  margin: 0 0.3rem;
+}
+
+.JoinButton {
+  border: none;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(48, 48, 156, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  padding: 0.7rem 2rem;
+  border-radius: 20px;
+  color: var(--mainColor);
+  cursor: pointer;
+}
