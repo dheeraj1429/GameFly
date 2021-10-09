@@ -1,0 +1,9 @@
+export const ActionType = {
+  BUY_NOW: "BUY_NOW",
+  SEARCH_GAME: "SEARCH_GAME",
+  JOIN: "JOIN",
+  USER_LOGIN: "USER_LOGIN",
+  ADD_TO_CART: "ADD_TO_CART",
+  SET_DATA: "SET_DATA",
+  SEND_DATA: "SEND_DATA",
+};

@@ -1,0 +1,2 @@
+api -> https://www.freetogame.com/api/games?platform=pc
+website -> https://www.freetogame.com/api-doc

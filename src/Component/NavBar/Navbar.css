@@ -1,0 +1,78 @@
+.Navbar {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--dark);
+  z-index: 999;
+}
+
+.NavbarDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.WhoMadeThis {
+  display: flex;
+  color: var(--mainColor);
+}
+
+.WhoMadeThis p {
+  margin: 0 0.5rem;
+  font-size: 0.7rem;
+}
+
+.searchDiv {
+  width: 650px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.searchDiv input {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  outline: none;
+  color: #555;
+}
+
+.searchDiv .SearchButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20%;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  color: #efefef;
+}
+
+.myProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--mainColor);
+}
+
+.myProfile p {
+  margin: 0 0.5rem;
+  font-size: 0.7rem;
+}
+
+.SubNavBar {
+  width: 100%;
+  color: var(--mainColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SubNavBar p {
+  margin: 2rem;
+  color: var(--mainColor);
+  text-decoration: none !important;
+}
+.active {
+  color: red;
+}
