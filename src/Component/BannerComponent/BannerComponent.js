@@ -8,13 +8,12 @@ function BannerComponent() {
   const selector = useSelector((state) => state.userReducer.DataList);
   const [GameId, setGameId] = useState("");
   const [Hover, setHover] = useState(false);
-  const [dataFetch, setdataFetch] = useState(false);
 
   const dispatch = useDispatch();
 
   let filterGameState;
 
-  if (dataFetch === true) {
+  if (selector) {
     filterGameState = selector.filter((item, idx) => idx < 3);
   }
 
@@ -33,13 +32,6 @@ function BannerComponent() {
       .catch((err) => {
         console.error(err);
       });
-
-    if (res) {
-      setdataFetch(true);
-    } else {
-      alert("Please check your internet connection");
-      setdataFetch(false);
-    }
   };
 
   useEffect(() => {
@@ -57,11 +49,9 @@ function BannerComponent() {
   return (
     <div className="BannerSection">
       {!GameId ? null : <video src={`https://www.freetogame.com/g/${GameId}/videoplayback.webm`} autoPlay />}
-      <div className="BannerContent">
-        <img src="/Images/logo.png" />
-      </div>
+      <div className="BannerContent"></div>
       <div className="SideBar">
-        {dataFetch === true ? (
+        {selector ? (
           <div className="SideBarInner">
             {filterGameState.map(({ id, thumbnail, title }) => (
               <div

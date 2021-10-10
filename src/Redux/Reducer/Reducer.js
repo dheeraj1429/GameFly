@@ -10,6 +10,7 @@ const initalState = {
     { name: "TOURNAMENTS" },
     { name: "CONTACT" },
   ],
+  joindata: [],
 };
 
 const userReducer = (state = initalState, action) => {
@@ -24,6 +25,17 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         SendData: action.payload,
+      };
+
+    case ActionType.JOIN:
+      return {
+        ...state,
+        joindata: [
+          ...state.joindata,
+          {
+            joinPayer: action.payload,
+          },
+        ],
       };
 
     default:

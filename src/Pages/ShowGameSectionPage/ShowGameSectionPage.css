@@ -1,0 +1,57 @@
+.ShowGameDiv {
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(https://wallpaperaccess.com/full/7446.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.ContainerDiv {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+}
+
+.ContainerDiv .Content {
+  display: flex;
+}
+
+.ContainerDiv .Content > div:nth-child(2) {
+  margin: 0 2rem;
+  color: #e6e6e6;
+}
+
+.backButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--mainColor);
+  top: 80px;
+  right: 0;
+}
+
+.backButton i {
+  color: var(--mainColor);
+}
+
+.ScreenShots {
+  display: flex;
+}
+
+.ScreenShotsSort {
+  width: 300px;
+  height: 200px;
+  margin: 0 1rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.VedioSection video {
+  min-width: 100%;
+  min-height: 60vh;
+}

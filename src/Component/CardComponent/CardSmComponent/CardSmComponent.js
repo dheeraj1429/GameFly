@@ -1,17 +1,50 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./CardSmComponent.css";
 
-function CardSmComponent({ thumbnail, title, id, short_description, release_date, publisher, platform, genre }) {
+function CardSmComponent({
+  thumbnail,
+  title,
+  id,
+  short_description,
+  release_date,
+  publisher,
+  platform,
+  genre,
+  game_url,
+  developer,
+  freetogame_profile_url,
+}) {
   return (
     <>
       <div className="card">
         <div className="Inner-Card">
-          <div
-            className="ImgDiv"
-            style={{
-              backgroundImage: `url(${thumbnail})`,
+          <Link
+            to={{
+              pathname: `Game-About:${title.replaceAll(" ", "_")}`,
+              AboutGameData: {
+                thumbnail,
+                title,
+                id,
+                short_description,
+                release_date,
+                publisher,
+                platform,
+                genre,
+                game_url,
+                developer,
+                freetogame_profile_url,
+              },
             }}
-          ></div>
+          >
+            <div
+              className="ImgDiv"
+              style={{
+                backgroundImage: `url(${thumbnail})`,
+              }}
+            ></div>
+          </Link>
         </div>
 
         <div className="CardContent">

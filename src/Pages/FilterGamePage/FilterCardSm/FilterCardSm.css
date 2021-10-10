@@ -1,0 +1,22 @@
+.FilterDivContent {
+  margin-bottom: 3rem;
+}
+.FilterContainer .FilterImgDiv {
+  width: 450px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+.FilteContent {
+  color: rgb(206, 206, 206);
+  letter-spacing: 1.4px;
+}
+
+.ContentFlex {
+  display: flex;
+}
+
+.ContentFlex p {
+  margin-right: 1.5rem;
+}

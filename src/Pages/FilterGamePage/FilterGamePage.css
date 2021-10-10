@@ -1,0 +1,11 @@
+.FilterGameDiv {
+  height: auto;
+  padding: 40px;
+  background-position: center;
+  background-color: #000;
+  background-size: cover;
+}
+.FilterContainer {
+  max-width: 1400px;
+  margin: auto;
+}

@@ -13,3 +13,10 @@ export const SendData = (data) => {
     payload: data,
   };
 };
+
+export const joinGame = (data) => {
+  return {
+    type: ActionType.JOIN,
+    payload: data,
+  };
+};

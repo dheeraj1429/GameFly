@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+
 import "./Navbar.css";
 
 function Navbar(props) {
   const SubNavDataStore = props.state.userReducer.SubNavData;
-  const [GameSearch, SetGameSearch] = useState("");
+  const GameArray = props.state.userReducer.DataList;
+  const [GameSearch, SetGameSearch] = useState({
+    data: "",
+    search: false,
+  });
 
   const SearchHandler = (event) => {
-    SetGameSearch(event.target.value);
+    SetGameSearch({ data: event.target.value });
   };
+
+  let FilterGame;
+  if (GameArray) {
+    FilterGame = GameArray.filter((el) => el.title.toLowerCase().includes(GameSearch.data.toLowerCase()));
+  }
+
   return (
     <>
       <div className="Navbar">
@@ -21,10 +32,19 @@ function Navbar(props) {
             <p>bhawanishankar9717657525@gmail.com</p>
           </div>
           <div className="searchDiv">
-            <input type="search" placeholder="Video game" value={GameSearch} onChange={SearchHandler} />
-            <button type="search" className="SearchButton">
-              Search
-            </button>
+            <input type="search" placeholder="Video game" value={GameSearch.data} onChange={SearchHandler} />
+            <Link
+              to={{
+                pathname: "/FilterGames",
+                FilterData: {
+                  FilterGame,
+                },
+              }}
+            >
+              <button type="search" className="SearchButton">
+                Search
+              </button>
+            </Link>
           </div>
 
           <div className="myProfile">

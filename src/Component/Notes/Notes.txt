@@ -1,2 +1,4 @@
 api -> https://www.freetogame.com/api/games?platform=pc
 website -> https://www.freetogame.com/api-doc
+
+https://www.freetogame.com/g/1/dauntless-1.jpg
