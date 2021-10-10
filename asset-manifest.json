@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/GameFly/static/css/main.8e5e14ce.chunk.css",
+    "main.js": "/GameFly/static/js/main.124db660.chunk.js",
+    "main.js.map": "/GameFly/static/js/main.124db660.chunk.js.map",
+    "runtime-main.js": "/GameFly/static/js/runtime-main.e2c035cd.js",
+    "runtime-main.js.map": "/GameFly/static/js/runtime-main.e2c035cd.js.map",
+    "static/js/2.5c535ecd.chunk.js": "/GameFly/static/js/2.5c535ecd.chunk.js",
+    "static/js/2.5c535ecd.chunk.js.map": "/GameFly/static/js/2.5c535ecd.chunk.js.map",
+    "index.html": "/GameFly/index.html",
+    "static/css/main.8e5e14ce.chunk.css.map": "/GameFly/static/css/main.8e5e14ce.chunk.css.map",
+    "static/js/2.5c535ecd.chunk.js.LICENSE.txt": "/GameFly/static/js/2.5c535ecd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e2c035cd.js",
+    "static/js/2.5c535ecd.chunk.js",
+    "static/css/main.8e5e14ce.chunk.css",
+    "static/js/main.124db660.chunk.js"
+  ]
+}
