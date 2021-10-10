@@ -7,20 +7,36 @@ import "./CardComponent.css";
 
 function CardComponent() {
   const selector = useSelector((state) => state.userReducer.DataList);
+  const [GameSelection, setGameSelection] = useState(false);
 
-  selector.length = 20;
+  let filterGameState;
+  if (GameSelection == true) {
+    filterGameState = selector.filter((item, idx) => idx < 12);
+  }
+
+  const ResData = async () => {
+    setTimeout(() => {
+      setGameSelection(true);
+    }, 300);
+  };
+
+  useEffect(() => {
+    ResData();
+  }, []);
 
   return (
-    <div
-      className="CardComponent"
-      style={{
-        backgroundImage: `url(${"https://c4.wallpaperflare.com/wallpaper/1020/1/213/world-of-warcraft-battle-for-azeroth-video-games-warcraft-alliance-wallpaper-preview.jpg"})`,
-      }}
-    >
-      {selector.map(({ id, ...otherProps }) => (
-        <CardSmComponent key={id} {...otherProps} />
-      ))}
-    </div>
+    <>
+      {GameSelection === true ? (
+        <div className="CardComponent">
+          <h1>Game Event Join To Online</h1>
+          <div className="Container">
+            {filterGameState.map(({ id, ...otherProps }) => (
+              <CardSmComponent key={id} {...otherProps} />
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

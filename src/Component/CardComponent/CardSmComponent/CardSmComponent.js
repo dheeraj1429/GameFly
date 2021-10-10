@@ -3,7 +3,7 @@ import "./CardSmComponent.css";
 
 function CardSmComponent({ thumbnail, title, id, short_description, release_date, publisher, platform, genre }) {
   return (
-    <div className="Container">
+    <>
       <div className="card">
         <div className="Inner-Card">
           <div
@@ -15,7 +15,7 @@ function CardSmComponent({ thumbnail, title, id, short_description, release_date
         </div>
 
         <div className="CardContent">
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>{short_description}</p>
           <p>{release_date}</p>
 
@@ -34,7 +34,7 @@ function CardSmComponent({ thumbnail, title, id, short_description, release_date
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

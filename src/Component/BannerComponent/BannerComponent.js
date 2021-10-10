@@ -8,13 +8,18 @@ function BannerComponent() {
   const selector = useSelector((state) => state.userReducer.DataList);
   const [GameId, setGameId] = useState("");
   const [Hover, setHover] = useState(false);
+  const [dataFetch, setdataFetch] = useState(false);
 
   const dispatch = useDispatch();
 
-  // let filterGameState = selector.filter((item, idx) => idx < 3);
+  let filterGameState;
 
-  const ResData = () => {
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games`, {
+  if (dataFetch === true) {
+    filterGameState = selector.filter((item, idx) => idx < 3);
+  }
+
+  const ResData = async () => {
+    const res = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games`, {
       method: "GET",
       headers: {
         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
@@ -28,6 +33,13 @@ function BannerComponent() {
       .catch((err) => {
         console.error(err);
       });
+
+    if (res) {
+      setdataFetch(true);
+    } else {
+      alert("Please check your internet connection");
+      setdataFetch(false);
+    }
   };
 
   useEffect(() => {
@@ -43,31 +55,31 @@ function BannerComponent() {
   };
 
   return (
-    <div
-      className="BannerSection"
-      style={{
-        backgroundImage: `url(https://images5.alphacoders.com/540/thumb-1920-540654.jpg)`,
-      }}
-    >
+    <div className="BannerSection">
       {!GameId ? null : <video src={`https://www.freetogame.com/g/${GameId}/videoplayback.webm`} autoPlay />}
+      <div className="BannerContent">
+        <img src="/Images/logo.png" />
+      </div>
       <div className="SideBar">
-        <div className="SideBarInner">
-          {/* {filterGameState.map(({ id, thumbnail, title }) => (
-            <div
-              className={Hover ? "SideBarCard active" : "SideBarCard"}
-              key={id}
-              style={{
-                backgroundImage: `url(${thumbnail})`,
-              }}
-              onClick={() => {
-                dispatch(SendData(thumbnail, title));
-                setGameId(id);
-              }}
-              onMouseEnter={AddingClassEvent}
-              onMouseLeave={RemovingClassEvent}
-            />
-          ))} */}
-        </div>
+        {dataFetch === true ? (
+          <div className="SideBarInner">
+            {filterGameState.map(({ id, thumbnail, title }) => (
+              <div
+                className={Hover ? "SideBarCard active" : "SideBarCard"}
+                key={id}
+                style={{
+                  backgroundImage: `url(${thumbnail})`,
+                }}
+                onClick={() => {
+                  dispatch(SendData(thumbnail, title));
+                  setGameId(id);
+                }}
+                onMouseEnter={AddingClassEvent}
+                onMouseLeave={RemovingClassEvent}
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
