@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { joinGame } from "../../../Redux/Action/action";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./CardSmComponent.css";
 
@@ -16,6 +18,8 @@ function CardSmComponent({
   developer,
   freetogame_profile_url,
 }) {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="card">
@@ -54,13 +58,24 @@ function CardSmComponent({
 
           <div className="JoinDiv">
             <div className="JoinDivFirst">
-              <img src="/Images/play.png" />
+              <i class="fas fa-gamepad"></i>
               <p>{publisher}</p>
               <p>{platform}</p>
             </div>
 
             <div>
-              <button type="button" className="JoinButton">
+              <button
+                type="button"
+                className="JoinButton"
+                onClick={() =>
+                  dispatch(
+                    joinGame({
+                      id: id,
+                      name: "joined",
+                    })
+                  )
+                }
+              >
                 Join
               </button>
             </div>

@@ -35,6 +35,10 @@
   font-weight: 500;
 }
 
+.JoinDivFirst i {
+  color: var(--mainColor);
+  margin-right: 0.5rem;
+}
 .card .CardContent p {
   font-size: 0.7rem;
   color: var(--lightSmook);
